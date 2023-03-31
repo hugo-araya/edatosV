@@ -12,11 +12,13 @@ int main(){ /* Realiza una suma */
 }
 
 int multiplicar(int a,int b){
+    printf("%d - %d\n", a, b);
     suma(a, b);
     return (a*b);
 }
 
 int suma(int a,int b){
+    printf("%d - %d\n", a, b);
     multiplicar(a, b);
     return (a+b);
 }
