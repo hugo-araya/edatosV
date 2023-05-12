@@ -9,6 +9,7 @@ struct lista{
 void crea_lista(struct lista **L);
 void add_inicio(struct lista **L, int elem);
 void recorre(struct lista **L);
+void add_final(struct lista **L, int elem);
 
 int main(){
     // Se crean los punteros a dos listas.
@@ -23,6 +24,8 @@ int main(){
     printf("\n");
     // Recorremos la lista y de paso sumamos el valor
     // de los datos almacenados en ella
+    recorre(&L);
+    add_final(&L, 20);
     recorre(&L);
     return 0;
 }
@@ -51,4 +54,17 @@ void recorre(struct lista **L){
         p = p->sig;
     }
     printf("\n");
+}
+
+void add_final(struct lista **L, int elem){
+    struct lista *p;
+    struct lista *q;
+    p = *L;
+    while (p->sig != NULL) {
+        p = p->sig;
+    } 
+    q = (struct lista *) malloc(sizeof(struct lista));
+    q->clave = elem;
+    q->sig = NULL;
+    p->sig = q;
 }
