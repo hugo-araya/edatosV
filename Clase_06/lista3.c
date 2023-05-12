@@ -1,4 +1,7 @@
+#ifndef _STIOH_
+#define _STIOH_
 #include <stdio.h>
+#endif
 #include "LISTA.h"
 
 int main(){

@@ -1,3 +1,8 @@
+#include <stdlib.h>
+#ifndef _STIOH_
+#define _STIOH_
+#include <stdio.h>
+#endif
 struct lista{
     int clave;
     struct lista *sig;
@@ -9,8 +14,6 @@ void recorre(struct lista **L);
 void add_final(struct lista **L, int elem);
 void del_inicio(struct lista **L);
 void del_final(struct lista **L);
-
-#include <stdlib.h>
 
 void crea_lista(struct lista **L){
     *L = (struct lista *) malloc(sizeof(struct lista)); 
