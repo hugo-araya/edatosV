@@ -3,6 +3,7 @@
 #define _STIOH_
 #include <stdio.h>
 #endif
+
 struct lista{
     int clave;
     struct lista *sig;
