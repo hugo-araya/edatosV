@@ -31,14 +31,17 @@ void add_inicio(struct lista **L, int elem){
 
 void recorre(struct lista **L){
     struct lista *p;
-    int suma;
-    p = *L;
-    suma = 0;
-    while (p != NULL) {
-        printf("%d, ", p->clave);
-        p = p->sig;
+    if (*L == NULL){
+        printf("Lista Vacia...\n");
     }
-    printf("\n");
+    else{
+        p = *L;
+        while (p != NULL) {
+            printf("%d, ", p->clave);
+            p = p->sig;
+        }
+        printf("\n");
+    }
 }
 
 void add_final(struct lista **L, int elem){
