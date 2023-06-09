@@ -19,5 +19,9 @@ int main(){
     add_final(&L, 2000);
     recorre(&L);
     recorre(&P);
+    del_inicio(&L);
+    recorre(&L);
+    del_final(&L);
+    recorre(&L);
     return 0;
 }

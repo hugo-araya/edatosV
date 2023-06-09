@@ -58,9 +58,19 @@ void add_final(struct lista **L, int elem){
 }
 
 void del_inicio(struct lista **L){
-
+    struct lista *p;
+    p = (*L)->sig;
+    free(*L);
+    *L = p;
 }
 
 void del_final(struct lista **L){
-
+    struct lista *p, *q;
+    p = *L;
+    while (p->sig != NULL){
+        q = p;
+        p = p->sig;
+    }
+    q->sig = NULL;
+    free(p);
 }
