@@ -1,34 +1,36 @@
 #include <stdlib.h>
 
 struct tpila{
-    int dato;
-   struct tpila *sig;
+  int dato;
+  struct tpila *sig;
 };
 
-void crear(struct tpila **pila);
-int vacia(struct tpila *pila);
-void push(struct tpila *pila, int elem);
-void pop(struct tpila *pila, int *elem);
+typedef struct tpila PILA;
 
-void crear(struct tpila **pila){
-    *pila = (struct tpila *) malloc(sizeof(struct tpila)); 
+void crear(PILA **pila);
+int vacia(PILA *pila);
+void push(PILA *pila, int elem);
+void pop(PILA *pila, int *elem);
+
+void crear(PILA **pila){
+    *pila = (PILA *) malloc(sizeof(PILA)); 
     (*pila)->sig = NULL;
 }
 
-int vacia(struct tpila *pila){
+int vacia(PILA *pila){
   return (pila->sig == NULL);
 }
 
-void push(struct tpila *pila, int elem){
-    struct tpila *nuevo;
-    nuevo = (struct tpila *) malloc(sizeof(struct tpila)); 
+void push(PILA *pila, int elem){
+    PILA *nuevo;
+    nuevo = (PILA *) malloc(sizeof(PILA)); 
     nuevo->dato = elem;
     nuevo->sig = pila->sig;
     pila->sig = nuevo;
 }
 
-void pop(struct tpila *pila, int *elem){
-  struct tpila *aux;
+void pop(PILA *pila, int *elem){
+  PILA *aux;
   aux = pila->sig;
   *elem = aux->dato;
   pila->sig = aux->sig;
