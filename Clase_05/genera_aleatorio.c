@@ -6,6 +6,6 @@ int main(){
     srand(time(0));
     numero = 1000000; 
     for (i=0; i< numero; i++)
-    printf("%d\n",rand()%100000); 
+        printf("%d\n",rand()%100000); 
     return 0;
 }
